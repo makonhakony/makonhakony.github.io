@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
     RouterModule,
     NgbModule,
     HttpClientModule
-  ]
+  ],
+  exports: [ HeaderComponent ]
 })
 export class CoreModule { }
