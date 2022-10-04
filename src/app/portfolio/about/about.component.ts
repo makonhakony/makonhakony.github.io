@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { BioService } from '../../core/services/bio.service';
+import { Component, OnInit } from '@angular/core';
+import { BioService } from 'src/app/core/services/bio.service';
 
 @Component({
   selector: 'app-about',
@@ -15,4 +15,5 @@ export class AboutComponent {
   ];
 
   constructor(private bioService: BioService) { }
+
 }
