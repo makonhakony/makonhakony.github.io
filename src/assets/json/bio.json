@@ -64,12 +64,13 @@
         {
             "level": "proficient",
             "set": [
-
+                ".NET", "Angular", "Python", "SQL", "Git", "C/C++", "Agile"
             ]
         },
         {
             "level": "familiar",
             "set": [
+                "Adobe Experience Management", "Azure", "k8s", "Powershell Script", "Jira", "Android", "ADO", "Jenkins", "Confluence", "Figma", "Unity", "Latex"
 
             ]
         }
