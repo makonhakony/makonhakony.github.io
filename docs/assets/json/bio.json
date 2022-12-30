@@ -2,19 +2,28 @@
     "firstName": "An",
     "lastName": "Pham",
     "intro": [ 
-        "I'm a software developer with a passion for web development. I am currently based somewhere in the world. My main focus is building fast, accessible, and beautiful websites that users enjoy.",
+        "I'm a graduate student in CS 👾. I am currently based somewhere in the world.",
+        "My future goal is becoming Software Architecture, because I am interested in many things: Software development, infrastructure, automation, AR/VR, mobile development, management and many more 🤣",
         "You can have a look at some of my work here." 
     ],
     "about": [
         {
             "text": [
                 {
-                    "head": "I am from",
+                    "head": "I come from",
                     "body": "Ho CHi Minh City, Vietnam"
                 },
                 {
                     "head": "My real name is",
                     "body": "Phạm Hoàng An"
+                },
+                {
+                    "head": "I am currently living in",
+                    "body": "Stockton, CA"
+                },
+                {
+                    "head": "My quote for today",
+                    "body": "I am the villian in my own story, and villian never wins..."
                 }
             ],
             "image": [
@@ -33,7 +42,7 @@
                 },
                 {
                     "head": "Somewhat I learn",
-                    "body": "Parralel program, Software Reverses"
+                    "body": "Parralel program, Software Reverses, Advanced Algorithm, Interaction Design, System admin and security, ..."
                 }
             ],
             "image": [
@@ -85,7 +94,19 @@
                     "name": "DevOps",
                     "start": "Aug 2021",
                     "end": "Jan 2022",
-                    "description": "test"
+                    "description": "Managed NovoNordisk Corporation tenants with more than 100 websites. Responsible for production deployment, resolved customer requests and incidents, managed user permission, and worked with the cloud. Technologies: Adobe Experience Management (AEM), Adobe Analysis, Jenkins, Azure."
+                },
+                {
+                    "name": "Full-stack developer",
+                    "start": "Jan 2021",
+                    "end": "Jul 2021",
+                    "description": "Developed Smarter Airport internal system. Core components: SRM, User Profile, and Core UI. Designed logical and physical design of the system."
+                },
+                {
+                    "name": "DevOps",
+                    "start": "Nov 2020",
+                    "end": "Jan 2021",
+                    "description": "Created pipelines, monitored Smarter Airport development systems."
                 }
             ]
         }
@@ -94,7 +115,12 @@
         {
             "name": "Linkedin",
             "icon": "",
-            "url": ""
+            "url": "https://www.linkedin.com/in/hoang-an-pham/"
+        },
+        {
+            "name": "GitHub",
+            "icon": "",
+            "url": "https://github.com/makonhakony"
         }
     ]
 }

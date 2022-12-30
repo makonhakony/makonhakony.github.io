@@ -10,12 +10,20 @@
         {
             "text": [
                 {
-                    "head": "I am from",
+                    "head": "I come from",
                     "body": "Ho CHi Minh City, Vietnam"
                 },
                 {
                     "head": "My real name is",
                     "body": "Phạm Hoàng An"
+                },
+                {
+                    "head": "I am currently living in",
+                    "body": "Stockton, CA"
+                },
+                {
+                    "head": "My quote for today",
+                    "body": "I am the villian in my own story, and villian never wins..."
                 }
             ],
             "image": [
@@ -34,7 +42,7 @@
                 },
                 {
                     "head": "Somewhat I learn",
-                    "body": "Parralel program, Software Reverses, Advanced Algorithm, Interaction Design,..."
+                    "body": "Parralel program, Software Reverses, Advanced Algorithm, Interaction Design, System admin and security, ..."
                 }
             ],
             "image": [
