@@ -11,18 +11,17 @@ export class ProjectsService {
 
   constructor(private http: HttpClient) { }
 
-  getProjects(featured?: boolean): Observable<Project[]> {
+  getProjects(type: string, featured?: boolean): Observable<Project[]> {
     let projects$ = this.http.get<Project[]>('assets/json/projects.json');
 
-    if (featured) {
-      return projects$.pipe(
-        mergeAll(),
-        filter(project => project.featured || false),
-        toArray()
-      );
-    }
 
-    return projects$;
+    return projects$.pipe(
+      mergeAll(),
+      filter(project => (project.featured == featured 
+        || project.featured) 
+        && project.type == type),
+      toArray()
+    );
   }
 }
 
