@@ -13,6 +13,7 @@ import { AlbumComponent } from './album/album.component';
 import { SkillsComponent } from './skills/skills.component';
 import { PositionsComponent } from './positions/positions.component';
 import { ConnectionsComponent } from './connections/connections.component';
+import { ProfessionalComponent } from './professional/professional.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ConnectionsComponent } from './connections/connections.component';
     AlbumComponent,
     SkillsComponent,
     PositionsComponent,
-    ConnectionsComponent
+    ConnectionsComponent,
+    ProfessionalComponent
   ],
   imports: [
     CommonModule,

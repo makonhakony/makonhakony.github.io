@@ -11,7 +11,7 @@ import { ProjectsService } from '../../core/services/projects.service';
 export class ProjectsComponent {
   isHome$ = this.headerService.isHome();
   projects$ = this.isHome$.pipe(
-    mergeMap(atHome => this.projectsService.getProjects(atHome))
+    mergeMap(atHome => this.projectsService.getProjects("personal", atHome))
   );
 
   respOptions = [
