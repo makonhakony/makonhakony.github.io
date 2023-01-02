@@ -2,57 +2,60 @@
     <div *ngFor="let options of respOptions" [ngClass]="options.viewClasses"
         class="flex-column align-items-center text-center w-100">
         <h1 [ngClass]="options.headingClass" class="mb-5"><span class="font-weight-bold">About</span> Me</h1>
-
-        <div class="d-flex flex-column align-item-center text-center w-100" *ngFor="let item of bio.about; let i = index">
-            <div class="d-flex flex-row justify-content-center">
-                <div class="d-flex flex-column justify-content-center align-item-center w-70" *ngIf="i % 2 != 0">
-                    <div class="d-flex flex-column justify-content-start align-item-start text-left m-3">
-                        <h4 *ngIf="!options.useSmallerHeadings" class="mb-4">
-                            <ul>
-                                <li *ngFor="let t of item.text">
-                                    <span><span class="font-weight-bold">{{t.head}}: </span></span>
-                                    <span>{{t.body}}</span>
-                                </li>
-                            </ul>
-                        </h4>
-                        <h5 *ngIf="options.useSmallerHeadings" class="mb-4">
-                            <ul>
-                                <li *ngFor="let t of item.text">
-                                    <span><span class="font-weight-bold">{{t.head}}: </span></span>
-                                    <span>{{t.body}}</span>
-                                </li>
-                            </ul>
-                        </h5>
+        <div class="body-margin">
+            <div class="d-flex flex-column align-item-center text-center w-100"
+                *ngFor="let item of bio.about; let i = index">
+                <div class="d-flex flex-row justify-content-center">
+                    <div class="d-flex flex-column justify-content-center align-item-center w-70" *ngIf="i % 2 != 0">
+                        <div class="d-flex flex-column justify-content-start align-item-start text-left m-3">
+                            <h4 *ngIf="!options.useSmallerHeadings" class="mb-4">
+                                <ul>
+                                    <li *ngFor="let t of item.text">
+                                        <span><span class="font-weight-bold">{{t.head}}: </span></span>
+                                        <span>{{t.body}}</span>
+                                    </li>
+                                </ul>
+                            </h4>
+                            <h5 *ngIf="options.useSmallerHeadings" class="mb-4">
+                                <ul>
+                                    <li *ngFor="let t of item.text">
+                                        <span><span class="font-weight-bold">{{t.head}}: </span></span>
+                                        <span>{{t.body}}</span>
+                                    </li>
+                                </ul>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-item-center w-30">
+                        <app-image-library class="d-flex flex-column justify-content-center align-item-center w-75"
+                            [image]="item.image">
+                        </app-image-library>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-item-center w-70" *ngIf="i % 2 == 0">
+                        <div class="d-flex flex-column justify-content-center align-item-center text-left m-3">
+                            <h4 *ngIf="!options.useSmallerHeadings" class="mb-4">
+                                <ul>
+                                    <li *ngFor="let t of item.text">
+                                        <span><span class="font-weight-bold">{{t.head}}: </span></span>
+                                        <span>{{t.body}}</span>
+                                    </li>
+                                </ul>
+                            </h4>
+                            <h5 *ngIf="options.useSmallerHeadings" class="mb-4">
+                                <ul>
+                                    <li *ngFor="let t of item.text">
+                                        <span><span class="font-weight-bold">{{t.head}}: </span></span>
+                                        <span>{{t.body}}</span>
+                                    </li>
+                                </ul>
+                            </h5>
+                        </div>
                     </div>
                 </div>
-                <div class="d-flex flex-column justify-content-center align-item-center w-30">
-                    <app-image-library class="d-flex flex-column justify-content-center align-item-center w-75"
-                        [image]="item.image">
-                    </app-image-library>
-                </div>
-                <div class="d-flex flex-column justify-content-center align-item-center w-70" *ngIf="i % 2 == 0">
-                    <div class="d-flex flex-column justify-content-center align-item-center text-left m-3">
-                        <h4 *ngIf="!options.useSmallerHeadings" class="mb-4">
-                            <ul>
-                                <li *ngFor="let t of item.text">
-                                    <span><span class="font-weight-bold">{{t.head}}: </span></span>
-                                    <span>{{t.body}}</span>
-                                </li>
-                            </ul>
-                        </h4>
-                        <h5 *ngIf="options.useSmallerHeadings" class="mb-4">
-                            <ul>
-                                <li *ngFor="let t of item.text">
-                                    <span><span class="font-weight-bold">{{t.head}}: </span></span>
-                                    <span>{{t.body}}</span>
-                                </li>
-                            </ul>
-                        </h5>
-                    </div>
-                </div>
+                <div class="d-none d-md-block mt-5"></div>
             </div>
-            <div class="d-none d-md-block mt-5"></div>
         </div>
+
         <div class="d-none d-md-block mt-5"></div>
 
     </div>

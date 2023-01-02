@@ -1,0 +1,104 @@
+.pvs-list {
+    list-style-type: none;
+}
+
+.artdeco-list__item {
+    border: 0;
+    position: relative;
+    background-color: transparent;
+    margin: 0;
+    padding: 8px 8px 9px;
+}
+
+.pvs-entity {
+    padding: 1.2rem 0;
+    display: flex;
+}
+
+.pvs-entity--padded {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+}
+
+.pvs-list__item--one-column .pvs-list__item--no-padding-when-nested, .pvs-list__item--three-column .pvs-list__item--no-padding-when-nested, .pvs-list__item--two-column .pvs-list__item--no-padding-when-nested {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.pvs-list {
+    list-style-type: none;
+}
+
+.optional-action-target-wrapper:not(.artdeco-button):not(.artdeco-dropdown__item), .optional-action-target-wrapper:not(.artdeco-button):not(.artdeco-dropdown__item).optional-action-target-wrapper:not(.artdeco-button):not(.artdeco-dropdown__item):visited, .optional-action-target-wrapper:not(.artdeco-button):not(.artdeco-dropdown__item):active, .optional-action-target-wrapper:not(.artdeco-button):not(.artdeco-dropdown__item):focus, .optional-action-target-wrapper:not(.artdeco-button):not(.artdeco-dropdown__item):hover {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.pvs-entity__image {
+    margin-right: 0.8rem;
+    color: rgb(140,140,140)
+}
+
+.EntityPhoto-square-3, .EntityPhoto-square-3-ghost-company {
+    width: 48px;
+    height: 48px;
+    box-sizing: border-box;
+    background-clip: content-box;
+    border: 4px solid transparent;
+    border-radius: 6px;
+}
+
+.visually-hidden {
+    display: block!important;
+    border: 0!important;
+    clip: rect(0 0 0 0)!important;
+    height: 1px!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position: absolute!important;
+    white-space: nowrap!important;
+    width: 1px!important;
+}
+
+.t-black--light {
+    color: rgb(140,140,140) !important
+}
+
+.t-black {
+    color: rgb(19, 19, 19) !important
+}
+
+.pvs-list__item--with-padding:not(:first-child), .pvs-list__item--with-top-padding {
+    margin-top: 1.2rem;
+}
+
+.inline-show-more-text {
+    position: relative;
+}
+
+.pvs-entity__path-node {
+    position: relative;
+    display: block;
+    border-radius: 50%;
+    height: 0.8rem;
+    width: 0.8rem;
+    background-color: rgb(140,140,140);
+    top: calc(1.2rem + 0.8rem);
+    left: calc(-3.2rem - 0.8rem / 2);
+    margin-bottom: calc(0.8rem * -1);
+}
+
+.pvs-entity--with-path {
+    position: relative;
+}
+
+.pvs-entity--with-path::before {
+    content: "";
+    position: absolute;
+    left: calc(-3.2rem - 2px / 2);
+    top: calc(calc(1.2rem + 0.8rem) + 0.8rem + 0.8rem);
+    height: calc(100% - (2 * 1.2rem));
+    width: 2px;
+    background-color: rgb(140,140,140);
+}
