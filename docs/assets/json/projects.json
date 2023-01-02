@@ -1,0 +1,89 @@
+[
+    {
+        "name": "Soduko",
+        "stack": {
+            "name": "Angular",
+            "iconClasses": "fab fa-angular"
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "sourceUrl": "https://github.com",
+        "previewUrl": "https://github.com",
+        "featured": true,
+        "type": "personal"
+    },
+    {
+        "name": "E-commerce Store",
+        "stack": {
+            "name": "React",
+            "iconClasses": "fab fa-react"
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "sourceUrl": "https://github.com",
+        "previewUrl": "https://github.com",
+        "featured": true,
+        "type": "personal"
+    },
+    {
+        "name": "Algorithm Visualization App",
+        "stack": {
+            "name": "Angular",
+            "iconClasses": "fab fa-angular"
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "sourceUrl": "https://github.com",
+        "previewUrl": "https://github.com",
+        "featured": true,
+        "type": "personal"
+    },
+    {
+        "name": "Time Tracking CLI App",
+        "stack": {
+            "name": "Node.js",
+            "iconClasses": "fab fa-node-js"
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "sourceUrl": "https://github.com",
+        "previewUrl": "https://github.com",
+        "featured": true,
+        "type": "personal"
+    },
+    {
+        "name": "test",
+        "stack": {
+            "name": "Node.js",
+            "iconClasses": "fab fa-node-js"
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "sourceUrl": "https://github.com",
+        "previewUrl": "https://github.com",
+        "featured": false,
+        "type": "personal"
+    },
+    {
+        "name": "Smarter Airport",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "previewUrl": "https://www.smarterairports.com/",
+        "featured": true,
+        "type": "professional",
+        "association": "Netcompany",
+        "image": "sa.png"
+    },
+    {
+        "name": "Novonordisk",
+        "description": "test",
+        "previewUrl": "https://www.novonordisk.com/",
+        "featured": true,
+        "type": "professional",
+        "association": "Netcompany",
+        "image": "novo.png"
+    },
+    {
+        "name": "Solar Car Telematics ",
+        "description": "test2",
+        "previewUrl": "https://www.thepacifican.com/lifestyles-wellness/pacifics-solar-powered-car-project",
+        "featured": true,
+        "type": "professional",
+        "association": "Univesity of The Pacific",
+        "image": "asc.png"
+    }
+]
