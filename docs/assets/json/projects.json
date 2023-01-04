@@ -1,49 +1,49 @@
 [
     {
-        "name": "Soduko",
+        "name": "PacmanAI",
+        "stack": {
+            "name": "Python",
+            "iconClasses": "fab fa-python"
+        },
+        "description": "Personal project using python using tkinter to draw a Pacman and develop decision tree for the most optimal path for Pacman to eat all fruits.",
+        "sourceUrl": "https://github.com/makonhakony/PacManAI",
+        "previewUrl": "https://github.com/makonhakony/PacManAI",
+        "featured": true,
+        "type": "personal"
+    },
+    {
+        "name": "Car Showroom - VR",
+        "stack": {
+            "name": "Unity",
+            "iconClasses": "fab fa-unity"
+        },
+        "description": "VR Code project using unity to interact with unreal car. Best expeience by using Oculus Quest 2.",
+        "sourceUrl": "https://github.com/makonhakony/Car-showroom---VR",
+        "previewUrl": "https://github.com/makonhakony/Car-showroom---VR",
+        "featured": true,
+        "type": "personal"
+    },
+    {
+        "name": "Software-Estimation",
         "stack": {
             "name": "Angular",
             "iconClasses": "fab fa-angular"
         },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "sourceUrl": "https://github.com",
-        "previewUrl": "https://github.com",
+        "description": "Create internal application to estimate Software Project effort. It will estimate based on different categories: Use Case Point, COCOMO, Function Point,...",
+        "sourceUrl": "https://github.com/makonhakony/Software-Estimation",
+        "previewUrl": "https://github.com/makonhakony/Software-Estimation",
         "featured": true,
         "type": "personal"
     },
     {
-        "name": "E-commerce Store",
+        "name": "Emotion Recognition",
         "stack": {
-            "name": "React",
-            "iconClasses": "fab fa-react"
+            "name": ".NET",
+            "iconClasses": "fab fa-microsoft"
         },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "sourceUrl": "https://github.com",
-        "previewUrl": "https://github.com",
-        "featured": true,
-        "type": "personal"
-    },
-    {
-        "name": "Algorithm Visualization App",
-        "stack": {
-            "name": "Angular",
-            "iconClasses": "fab fa-angular"
-        },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "sourceUrl": "https://github.com",
-        "previewUrl": "https://github.com",
-        "featured": true,
-        "type": "personal"
-    },
-    {
-        "name": "Time Tracking CLI App",
-        "stack": {
-            "name": "Node.js",
-            "iconClasses": "fab fa-node-js"
-        },
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "sourceUrl": "https://github.com",
-        "previewUrl": "https://github.com",
+        "description": "Building Azure Cognitive service for sentiment analyzation. The application will be text base. User will chat with the bot but it will answer based on different scenario.",
+        "sourceUrl": "https://github.com/makonhakony/Emotion-Recognition",
+        "previewUrl": "https://github.com/makonhakony/Emotion-Recognition",
         "featured": true,
         "type": "personal"
     },
