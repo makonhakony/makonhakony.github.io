@@ -7,20 +7,12 @@
             <hr class="my-4">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm">
-                        <p>It uses utility classes for typography and spacing to space content out within the larger
-                            container.</p>
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                    </div>
-                    <div class="col-sm">
-                        <p>It uses utility classes for typography and spacing to space content out within the larger
-                            container.</p>
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                    </div>
-                    <div class="col-sm">
-                        <p>It uses utility classes for typography and spacing to space content out within the larger
-                            container.</p>
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                    <div class="col-sm" *ngFor="let item of bio.connections">
+                        <p>{{item.description}}</p>
+                        <a class="btn btn-primary btn-lg" [href]="item.url" role="button">
+                            <i [ngClass]="item.icon"></i>
+                            {{item.name}}
+                        </a>
                     </div>
                 </div>
             </div>
