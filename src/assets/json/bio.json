@@ -23,7 +23,7 @@
                 },
                 {
                     "head": "My quote for today",
-                    "body": "I am the villian in my own story, and villian never wins..."
+                    "body": "Dont chase a butterfly, instead build a beautiful garden. Then butterfly will come. Even if they dont, we still have a beautiful garden :D"
                 }
             ],
             "image": [
@@ -114,13 +114,21 @@
     "connections": [
         {
             "name": "Linkedin",
-            "icon": "",
-            "url": "https://www.linkedin.com/in/hoang-an-pham/"
+            "icon": "fab fa-linkedin",
+            "url": "https://www.linkedin.com/in/hoang-an-pham/",
+            "description":"My professional profile and you can contact me through here for business"
         },
         {
             "name": "GitHub",
-            "icon": "",
-            "url": "https://github.com/makonhakony"
+            "icon": "fab fa-github",
+            "url": "https://github.com/makonhakony",
+            "description":"This is where my personal code project stored"
+        },
+        {
+            "name": "Twitter",
+            "icon": "fab fa-twitter",
+            "url": "https://twitter.com/HakonyAnPham",
+            "description":"I dont know why I created this but you can also find me here"
         }
     ]
 }
