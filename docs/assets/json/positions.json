@@ -1,0 +1,65 @@
+[
+    {
+        "companyPicture":"https://media.licdn.com/dms/image/D560BAQEtpvfTmckggg/company-logo_100_100/0/1695093434986/pacific_solar_car_project_logo?e=1712793600&v=beta&t=bEcsXvhWGWGyhPBgdyja1XO0sw51cDlfdsxLACzNEZE",
+        "companyPictureLink":"https://www.linkedin.com/company/97174465/",
+        "companyName":"Pacific Solar Car Project",
+        "companyTime":"Jun 2022 - Present",
+        "companyLocation":"Stockton, US",
+        "position":[
+            {
+                "positionName":"Telematics Team Lead",
+                "positionDescription":[
+                    "Project manager in Solar Car Club of University of The Pacific",
+                    "Competing Formular Sun American and International contest",
+                    "Building car Telematics Control Unit, Azure Cognitive Service, and Android HMI device",
+                    "Managing and instructing a team with around 20 members"
+                ],
+                "positionSkill":[
+                    "Robotics ·Android Automative",
+                    "Microsoft Azure",
+                    "Agile Methodologies"
+                ]
+                
+            }
+        ]
+    },
+    {
+        "companyPicture":"https://media.licdn.com/dms/image/D560BAQEtpvfTmckggg/company-logo_100_100/0/1695093434986/pacific_solar_car_project_logo?e=1712793600&v=beta&t=bEcsXvhWGWGyhPBgdyja1XO0sw51cDlfdsxLACzNEZE",
+        "companyPictureLink":"https://www.linkedin.com/company/97174465/",
+        "companyName":"Pacific Solar Car Project",
+        "companyTime":"Jun 2022 - Present",
+        "companyLocation":"Stockton, US",
+        "position":[
+            {
+                "positionName":"Telematics Team Lead",
+                "positionDescription":[
+                    "Project manager in Solar Car Club of University of The Pacific",
+                    "Competing Formular Sun American and International contest",
+                    "Building car Telematics Control Unit, Azure Cognitive Service, and Android HMI device",
+                    "Managing and instructing a team with around 20 members"
+                ],
+                "positionSkill":[
+                    "Robotics ·Android Automative",
+                    "Microsoft Azure",
+                    "Agile Methodologies"
+                ]
+                
+            },
+            {
+                "positionName":"Telematics Team Lead",
+                "positionDescription":[
+                    "Project manager in Solar Car Club of University of The Pacific",
+                    "Competing Formular Sun American and International contest",
+                    "Building car Telematics Control Unit, Azure Cognitive Service, and Android HMI device",
+                    "Managing and instructing a team with around 20 members"
+                ],
+                "positionSkill":[
+                    "Robotics ·Android Automative",
+                    "Microsoft Azure",
+                    "Agile Methodologies"
+                ]
+                
+            }
+        ]
+    }
+]
