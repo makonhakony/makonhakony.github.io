@@ -9,7 +9,6 @@ import { ImageLibraryComponent } from './image-library/image-library.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';;
 import { ContactService } from './contact-form/contact.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AlbumComponent } from './album/album.component';
 import { SkillsComponent } from './skills/skills.component';
 import { PositionsComponent } from './positions/positions.component';
 import { ConnectionsComponent } from './connections/connections.component';
@@ -25,7 +24,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProjectsComponent,
     ContactFormComponent,
     ContactFormComponent,
-    AlbumComponent,
     SkillsComponent,
     PositionsComponent,
     ConnectionsComponent,

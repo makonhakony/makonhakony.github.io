@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BioService } from 'src/app/core/services/bio.service';
+import { PositionService } from 'src/app/core/services/position.service';
 
 @Component({
   selector: 'app-positions',
@@ -8,9 +8,12 @@ import { BioService } from 'src/app/core/services/bio.service';
 })
 export class PositionsComponent implements OnInit {
 
-  constructor(private bioService: BioService) { }
+  constructor(
+    private positionServices: PositionService
+    ) 
+    { }
 
-  bio$ = this.bioService.getBio();
+  positions$ = this.positionServices.getPosition();
 
   respOptions = [
     { viewClasses: 'd-none d-md-flex', headingClass: 'display-3', useSmallerHeadings: false },
