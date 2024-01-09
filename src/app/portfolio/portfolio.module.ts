@@ -14,6 +14,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { PositionsComponent } from './positions/positions.component';
 import { ConnectionsComponent } from './connections/connections.component';
 import { ProfessionalComponent } from './professional/professional.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ProfessionalComponent } from './professional/professional.component';
   imports: [
     CommonModule,
     PortfolioRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers:[
     ContactService
