@@ -1,18 +1,10 @@
-<div class="d-flex justify-content-center vw-90 mx-auto" *ngIf="bio$ | async as bio">
+<div class="d-flex justify-content-center vw-90 mx-auto" *ngIf="positions$ | async as positions">
     <div *ngFor="let options of respOptions" [ngClass]="options.viewClasses"
         class="flex-column align-items-center text-center w-100">
         <h1 [ngClass]="options.headingClass" class="mb-5"> <span class="font-weight-bold">I Used To Be</span></h1>
-        <!-- <div class="d-flex flex-row justify-content-center" *ngFor="let item of bio.positions">
-            <div class="d-flex flex-column justify-content-center align-item-center w-30">
-                {{item.company}}
-            </div>
-            <div class="d-flex flex-column justify-content-center align-item-center w-70">
-                test
-            </div>
-        </div> -->
         <div class="w-70 justify-content-center body-margin">
             <ul class="pvs-list ph5 d-flex flex-row flex-wrap">
-                <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
+                <!-- <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
                     <div class="pvs-entity pvs-entity--padded pvs-list__item--no-padding-when-nested">
                         <div>
                             <a data-field="experience_company_logo" class="optional-action-target-wrapper d-flex"
@@ -130,19 +122,22 @@
                         </div>
                     </div>
 
-                </li>
-                <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
+                </li> -->
+                <li 
+                class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column"
+                *ngFor="let position of positions"
+                >
                     <div class="pvs-entity pvs-entity--padded pvs-list__item--no-padding-when-nested">
                         <div>
                             <a data-field="experience_company_logo" 
                             class="optional-action-target-wrapper d-flex" 
                             target="_self" 
-                            href="https://www.linkedin.com/company/8636/"
+                            [href]="position.compnayPictureLink"
                             >
                                 <div class="pvs-entity__image ">
                                     <div class="d-flex">
                                         <img width="48"
-                                            src="https://media.licdn.com/dms/image/C560BAQFPsmm4x1o9nw/company-logo_100_100/0/1660254133836/university_of_the_pacific_logo?e=1712188800&v=beta&t=fcYTI9j0oSHTCsUYN0ztajq4oe978mJNxBBI_0JQRcM"
+                                            [src]="position.companyPicture"
                                             loading="lazy" height="48" alt="UOP logo" id="ember175"
                                             class="EntityPhoto-square-3  lazy-image ember-view">
                                     </div>
@@ -157,33 +152,28 @@
                                 data-field="experience_company_logo" 
                                 class="optional-action-target-wrapper d-flex flex-column w-100" 
                                 target="_self" 
-                                href="https://www.linkedin.com/company/215128/">
+                                [href]="position.compnayPictureLink">
                                     <div class="d-flex align-items-center">
                                         <span class="mr-1 hoverable-link-text font-weight-bold">
                                             <span aria-hidden="true">
-                                                University of The Pacifc: SOECS
-                                            </span>
-                                            <span class="visually-hidden">
-                                                University of The Pacifc: SOECS
+                                                {{ position.companyName }}
                                             </span>
                                         </span>
 
                                     </div>
                                     <span class="h6 font-weight-normal">
                                         <span aria-hidden="true">
-                                            Full-time & Part-time · 5 mos
-                                        </span>
-                                        <span class="visually-hidden">
-                                            Full-time & Part-time · 5 mos
+                                            {{ position.companyTime }}
                                         </span>
                                     </span>
                                 </a>
                             </div>
                             <div class="pvs-list__outer-container">
+                                <!-- Role List -->
                                 <ul class="pvs-list">
-                                    <li class=" ">
+                                    <li *ngFor="let role of position.roles; index as i">
                                         <span class="pvs-entity__path-node"></span>
-                                        <div class="pvs-entity pvs-entity--with-path">
+                                        <div [ngClass]="{'pvs-entity': true, 'pvs-entity--with-path': i != position.roles.length - 1}">
                                             <div class="d-flex flex-column w-100 align-self-center">
                                                 <div class="d-flex flex-row justify-content-between">
                                                     <a 
@@ -193,26 +183,21 @@
                                                         <div class="d-flex align-items-center">
                                                             <span class="mr-1 hoverable-link-text font-weight-bold">
                                                                 <span aria-hidden="true">
-                                                                    Summer AI Robotics
-                                                                </span>
-                                                                <span class="visually-hidden">
-                                                                    Summer AI Robotics
+                                                                    {{ role.roleName }}
                                                                 </span>
                                                             </span>
                                                         </div>
-                                                        <span class="h6 font-weight-normal t-black--light">
+                                                        <span class="h6 font-weight-normal t-black--light" *ngIf="role.companyTime">
                                                             <span aria-hidden="true">
-                                                                Jul 2023 - Sep 2021 · 3 mos
-                                                            </span>
-                                                            <span class="visually-hidden">
-                                                                May 2023 - Jun 2023 · 2 mos
+                                                                {{ role.roleTime }}
                                                             </span>
                                                         </span>
-
+                                                        <span class="h6 font-weight-normal t-black--light">
+                                                            <span aria-hidden="true">
+                                                                {{ role.roleLocation }}
+                                                            </span>
+                                                        </span>
                                                     </a>
-                                                    <div class="pvs-entity__action-container">
-
-                                                    </div>
                                                 </div>
 
                                                 <div class="pvs-list__outer-container">
@@ -226,38 +211,18 @@
                                                                             <div class="d-flex w-100">
                                                                                 <div class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
                                                                                     <div 
-                                                                                    class="inline-show-more-text inline-show-more-text--is-collapsed w-100" 
+                                                                                    class="inline-show-more-text inline-show-more-text--is-collapsed w-100 text-left" 
                                                                                     tabindex="-1">
-                                                                                        <span
-                                                                                            aria-hidden="true">Developed Smarter Airport internal system. Core components: SRM, User
-                                                                                            Profile, and Core UI.
-                                                                                            Designed
-                                                                                            logical and physical design
-                                                                                            of
-                                                                                            the
-                                                                                            system.<br>Technologies:
-                                                                                            Angular, .NET core,
-                                                                                            PostgreSQL.</span><span
-                                                                                            class="visually-hidden">Developed
-                                                                                            Smarter Airport internal
-                                                                                            system.
-                                                                                            Core components: SRM, User
-                                                                                            Profile, and Core UI.
-                                                                                            Designed
-                                                                                            logical and physical design
-                                                                                            of
-                                                                                            the system.
-                                                                                            Technologies: Angular, .NET
-                                                                                            core, PostgreSQL.</span>
-
-
-
+                                                                                        <span aria-hidden="true" >
+                                                                                            <ul style="list-style-type: square; padding-left: 0;">
+                                                                                                <li *ngFor="let text of role.roleDescription">
+                                                                                                    {{ text }}
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </span>
                                                                                     </div>
                                                                                 </div>
-
-
                                                                             </div>
-
                                                                         </div>
 
                                                                     </li>
@@ -269,43 +234,21 @@
                                                         <li class=" ">
                                                             <div class="pvs-list__outer-container">
 
-                                                                <ul class="pvs-list
-        
-        ">
+                                                                <ul class="pvs-list">
                                                                     <li class="pvs-list__item--with-top-padding ">
                                                                         <div class="d-flex ">
-                                                                            <div class="
-      d-flex w-100">
-
-
+                                                                            <div class="d-flex w-100">
                                                                                 <div
                                                                                     class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
-                                                                                    <div class="inline-show-more-text
-    inline-show-more-text--is-collapsed
-    
-    
-    
-     w-100" tabindex="-1">
-
-                                                                                        <span
-                                                                                            aria-hidden="true"><strong>Skills:</strong><span
-                                                                                                class="white-space-pre">
-                                                                                            </span>Angular · Git ·
-                                                                                            PostgreSQL · Entity
-                                                                                            Framework ·
-                                                                                            .NET Core</span><span
-                                                                                            class="visually-hidden"><strong>Skills:</strong><span
-                                                                                                class="white-space-pre">
-                                                                                            </span>Angular · Git ·
-                                                                                            PostgreSQL · Entity
-                                                                                            Framework ·
-                                                                                            .NET Core</span>
-
-
+                                                                                    <div class="inline-show-more-text inline-show-more-text--is-collapsed w-100" tabindex="-1">
+                                                                                        <span aria-hidden="true">
+                                                                                            <strong>Skills:</strong> 
+                                                                                            <span *ngFor="let skill of role.roleSkill">
+                                                                                                🧠 {{ skill }}
+                                                                                            </span>
+                                                                                        </span>
                                                                                     </div>
                                                                                 </div>
-
-
                                                                             </div>
 
                                                                         </div>
@@ -323,20 +266,9 @@
                                         </div>
 
                                     </li>
-                                    <li class=" ">
+                                    <!-- <li class=" ">
                                         <span class="pvs-entity__path-node"></span>
-                                        <div class="pvs-entity
-    
-    
-    ">
-                                            <div>
-                                                <div class="
-        d-flex" tabindex="-1" aria-hidden="true">
-
-
-                                                </div>
-
-                                            </div>
+                                        <div class="pvs-entity">
 
                                             <div class="d-flex flex-column w-100 align-self-center">
                                                 <div class="d-flex flex-row justify-content-between">
@@ -344,10 +276,9 @@
           d-flex flex-column w-100" target="_self" href="https://www.linkedin.com/company/215128/">
                                                         <div class="d-flex align-items-center">
                                                             <span class="mr-1 hoverable-link-text font-weight-bold">
-                                                                <span aria-hidden="true">DevOps
-                                                                    Consultant</span><span
-                                                                    class="visually-hidden">DevOps
-                                                                    Consultant</span>
+                                                                <span aria-hidden="true">
+                                                                    DevOps Consultant
+                                                                </span>
                                                             </span>
 
                                                         </div>
@@ -475,937 +406,7 @@
                                             </div>
                                         </div>
 
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </li>
-                <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
-
-                    <div class="pvs-entity pvs-entity--padded pvs-list__item--no-padding-when-nested">
-                        <div>
-                            <a data-field="experience_company_logo" class="optional-action-target-wrapper 
-        d-flex" target="_self" href="https://www.linkedin.com/company/215128/">
-                                <div class="pvs-entity__image ">
-                                    <div class="d-flex">
-                                        <img width="48"
-                                            src="https://media.licdn.com/dms/image/C560BAQGk7oWAPxq-Pw/company-logo_100_100/0/1623341030738?e=1680739200&amp;v=beta&amp;t=IE68lJbOaZRREymzx-1uxiML9L292y-c_8B7VIrS2_M"
-                                            loading="lazy" height="48" alt="Netcompany logo" id="ember175"
-                                            class="EntityPhoto-square-3  lazy-image ember-view">
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-
-                        <div class="d-flex flex-column w-100 align-self-center">
-                            <div class="d-flex flex-row justify-content-between">
-                                <a data-field="experience_company_logo" class="optional-action-target-wrapper 
-          d-flex flex-column w-100" target="_self" href="https://www.linkedin.com/company/215128/">
-                                    <div class="d-flex align-items-center">
-                                        <span class="mr-1 hoverable-link-text font-weight-bold">
-                                            <span aria-hidden="true">Netcompany</span><span
-                                                class="visually-hidden">Netcompany</span>
-                                        </span>
-
-                                    </div>
-                                    <span class="h6 font-weight-normal">
-                                        <span aria-hidden="true">Full-time · 1 yr 3 mos</span><span
-                                            class="visually-hidden">Full-time · 1 yr 3 mos</span>
-                                    </span>
-                                </a>
-                                <div class="pvs-entity__action-container">
-
-                                </div>
-                            </div>
-                            <div class="pvs-list__outer-container">
-                                <ul class="pvs-list">
-                                    <li class=" ">
-                                        <span class="pvs-entity__path-node"></span>
-                                        <div class="pvs-entity pvs-entity--with-path">
-                                            <div>
-                                                <div class="d-flex" tabindex="-1" aria-hidden="true">
-
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="d-flex flex-column w-100 align-self-center">
-                                                <div class="d-flex flex-row justify-content-between">
-                                                    <a class="optional-action-target-wrapper d-flex flex-column w-100"
-                                                        target="_self" href="https://www.linkedin.com/company/215128/">
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="mr-1 hoverable-link-text font-weight-bold">
-                                                                <span aria-hidden="true">DevOps
-                                                                    Consultant</span><span
-                                                                    class="visually-hidden">DevOps
-                                                                    Consultant</span>
-                                                            </span>
-
-                                                        </div>
-                                                        <span class="h6 font-weight-normal t-black--light">
-                                                            <span aria-hidden="true">Aug 2021 - Jan 2022 · 6
-                                                                mos</span><span class="visually-hidden">Aug
-                                                                2021 - Jan 2022 · 6 mos</span>
-                                                        </span>
-                                                    </a>
-                                                    <div class="pvs-entity__action-container">
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="pvs-list__outer-container">
-
-                                                    <ul class="pvs-list
-        
-        ">
-                                                        <li class=" ">
-                                                            <div class="pvs-list__outer-container">
-
-                                                                <ul class="pvs-list
-        
-        ">
-                                                                    <li class="pvs-list__item--with-top-padding ">
-                                                                        <div class="d-flex ">
-                                                                            <div class="
-      d-flex w-100">
-
-
-                                                                                <div
-                                                                                    class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
-                                                                                    <div class="inline-show-more-text
-    inline-show-more-text--is-collapsed
-    
-    
-    
-     w-100" tabindex="-1">
-
-                                                                                        <span aria-hidden="true">Managed
-                                                                                            NovoNordisk Corporation
-                                                                                            tenants
-                                                                                            with more than 100
-                                                                                            websites.<span
-                                                                                                class="white-space-pre">
-                                                                                            </span><br>Responsible
-                                                                                            for production deployment,
-                                                                                            resolved customer requests
-                                                                                            and
-                                                                                            incidents, managed user
-                                                                                            permission, and worked with
-                                                                                            the
-                                                                                            cloud.<br>Technologies:
-                                                                                            Adobe Experience Management
-                                                                                            (AEM), Adobe Analysis,
-                                                                                            Jenkins,
-                                                                                            Azure.</span><span
-                                                                                            class="visually-hidden">Managed
-                                                                                            NovoNordisk Corporation
-                                                                                            tenants
-                                                                                            with more than 100 websites.
-                                                                                            Responsible for production
-                                                                                            deployment, resolved
-                                                                                            customer
-                                                                                            requests and incidents,
-                                                                                            managed
-                                                                                            user permission, and worked
-                                                                                            with
-                                                                                            the cloud.
-                                                                                            Technologies: Adobe
-                                                                                            Experience
-                                                                                            Management (AEM), Adobe
-                                                                                            Analysis, Jenkins,
-                                                                                            Azure.</span>
-
-
-
-
-                                                                                    </div>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </li>
-                                                                </ul>
-
-                                                            </div>
-
-                                                        </li>
-                                                        <li class=" ">
-                                                            <div class="pvs-list__outer-container">
-
-                                                                <ul class="pvs-list
-        
-        ">
-                                                                    <li class="pvs-list__item--with-top-padding ">
-                                                                        <div class="d-flex ">
-                                                                            <div class="
-      d-flex w-100">
-
-
-                                                                                <div
-                                                                                    class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
-                                                                                    <div class="inline-show-more-text
-    inline-show-more-text--is-collapsed
-    
-    
-    
-     w-100" tabindex="-1">
-
-                                                                                        <span
-                                                                                            aria-hidden="true"><strong>Skills:</strong><span
-                                                                                                class="white-space-pre">
-                                                                                            </span>Git · Continuous
-                                                                                            Integration and Continuous
-                                                                                            Delivery (CI/CD) ·
-                                                                                            Kubernetes ·
-                                                                                            Docker Products · Linux ·
-                                                                                            Azure
-                                                                                            DevOps ·
-                                                                                            DevOps</span><span
-                                                                                            class="visually-hidden"><strong>Skills:</strong><span
-                                                                                                class="white-space-pre">
-                                                                                            </span>Git · Continuous
-                                                                                            Integration and Continuous
-                                                                                            Delivery (CI/CD) ·
-                                                                                            Kubernetes ·
-                                                                                            Docker Products · Linux ·
-                                                                                            Azure
-                                                                                            DevOps · DevOps</span>
-
-
-                                                                                    </div>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </li>
-                                                                </ul>
-
-                                                            </div>
-
-                                                        </li>
-                                                    </ul>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </li>
-                                    <li class=" ">
-                                        <span class="pvs-entity__path-node"></span>
-                                        <div class="pvs-entity
-    
-    pvs-entity--with-path
-    ">
-                                            <div>
-                                                <div class="
-        d-flex" tabindex="-1" aria-hidden="true">
-
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="d-flex flex-column w-100 align-self-center">
-                                                <div class="d-flex flex-row justify-content-between">
-                                                    <a class="optional-action-target-wrapper 
-          d-flex flex-column w-100" target="_self" href="https://www.linkedin.com/company/215128/">
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="mr-1 hoverable-link-text font-weight-bold">
-                                                                <span aria-hidden="true">Full-stack
-                                                                    Developer</span><span
-                                                                    class="visually-hidden">Full-stack
-                                                                    Developer</span>
-                                                            </span>
-
-                                                        </div>
-                                                        <span class="h6 font-weight-normal t-black--light">
-                                                            <span aria-hidden="true">Jan 2021 - Jul 2021 · 7
-                                                                mos</span><span class="visually-hidden">Jan
-                                                                2021 - Jul 2021 · 7 mos</span>
-                                                        </span>
-
-                                                    </a>
-
-
-
-                                                    <div class="pvs-entity__action-container">
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="pvs-list__outer-container">
-
-                                                    <ul class="pvs-list
-        
-        ">
-                                                        <li class=" ">
-                                                            <div class="pvs-list__outer-container">
-
-                                                                <ul class="pvs-list
-        
-        ">
-                                                                    <li class="pvs-list__item--with-top-padding ">
-                                                                        <div class="d-flex ">
-                                                                            <div class="
-      d-flex w-100">
-
-
-                                                                                <div
-                                                                                    class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
-                                                                                    <div class="inline-show-more-text
-    inline-show-more-text--is-collapsed
-    
-    
-    
-     w-100" tabindex="-1">
-
-                                                                                        <span
-                                                                                            aria-hidden="true">Developed
-                                                                                            Smarter Airport internal
-                                                                                            system.
-                                                                                            Core components: SRM, User
-                                                                                            Profile, and Core UI.
-                                                                                            Designed
-                                                                                            logical and physical design
-                                                                                            of
-                                                                                            the
-                                                                                            system.<br>Technologies:
-                                                                                            Angular, .NET core,
-                                                                                            PostgreSQL.</span><span
-                                                                                            class="visually-hidden">Developed
-                                                                                            Smarter Airport internal
-                                                                                            system.
-                                                                                            Core components: SRM, User
-                                                                                            Profile, and Core UI.
-                                                                                            Designed
-                                                                                            logical and physical design
-                                                                                            of
-                                                                                            the system.
-                                                                                            Technologies: Angular, .NET
-                                                                                            core, PostgreSQL.</span>
-
-
-
-                                                                                    </div>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </li>
-                                                                </ul>
-
-                                                            </div>
-
-                                                        </li>
-                                                        <li class=" ">
-                                                            <div class="pvs-list__outer-container">
-
-                                                                <ul class="pvs-list
-        
-        ">
-                                                                    <li class="pvs-list__item--with-top-padding ">
-                                                                        <div class="d-flex ">
-                                                                            <div class="
-      d-flex w-100">
-
-
-                                                                                <div
-                                                                                    class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
-                                                                                    <div class="inline-show-more-text
-    inline-show-more-text--is-collapsed
-    
-    
-    
-     w-100" tabindex="-1">
-
-                                                                                        <span
-                                                                                            aria-hidden="true"><strong>Skills:</strong><span
-                                                                                                class="white-space-pre">
-                                                                                            </span>Angular · Git ·
-                                                                                            PostgreSQL · Entity
-                                                                                            Framework ·
-                                                                                            .NET Core</span><span
-                                                                                            class="visually-hidden"><strong>Skills:</strong><span
-                                                                                                class="white-space-pre">
-                                                                                            </span>Angular · Git ·
-                                                                                            PostgreSQL · Entity
-                                                                                            Framework ·
-                                                                                            .NET Core</span>
-
-
-                                                                                    </div>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </li>
-                                                                </ul>
-
-                                                            </div>
-
-                                                        </li>
-                                                    </ul>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </li>
-                                    <li class=" ">
-                                        <span class="pvs-entity__path-node"></span>
-                                        <div class="pvs-entity
-    
-    
-    ">
-                                            <div>
-                                                <div class="
-        d-flex" tabindex="-1" aria-hidden="true">
-
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="d-flex flex-column w-100 align-self-center">
-                                                <div class="d-flex flex-row justify-content-between">
-                                                    <a class="optional-action-target-wrapper 
-          d-flex flex-column w-100" target="_self" href="https://www.linkedin.com/company/215128/">
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="mr-1 hoverable-link-text font-weight-bold">
-                                                                <span aria-hidden="true">DevOps
-                                                                    Consultant</span><span
-                                                                    class="visually-hidden">DevOps
-                                                                    Consultant</span>
-                                                            </span>
-
-                                                        </div>
-                                                        <span class="h6 font-weight-normal t-black--light">
-                                                            <span aria-hidden="true">Nov 2020 - Jan 2021 · 3
-                                                                mos</span><span class="visually-hidden">Nov
-                                                                2020 - Jan 2021 · 3 mos</span>
-                                                        </span>
-                                                        <span class="h6 font-weight-normal t-black--light">
-                                                            <span aria-hidden="true">Vietnam</span><span
-                                                                class="visually-hidden">Vietnam</span>
-                                                        </span>
-                                                    </a>
-
-
-
-                                                    <div class="pvs-entity__action-container">
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="pvs-list__outer-container">
-
-                                                    <ul class="pvs-list
-        
-        ">
-                                                        <li class=" ">
-                                                            <div class="pvs-list__outer-container">
-
-                                                                <ul class="pvs-list
-        
-        ">
-                                                                    <li class="pvs-list__item--with-top-padding ">
-                                                                        <div class="d-flex ">
-                                                                            <div class="
-      d-flex w-100">
-
-
-                                                                                <div
-                                                                                    class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
-                                                                                    <div class="inline-show-more-text
-    inline-show-more-text--is-collapsed
-    
-    
-    
-     w-100" tabindex="-1">
-
-                                                                                        <span aria-hidden="true">Created
-                                                                                            pipelines, monitored Smarter
-                                                                                            Airport development
-                                                                                            systems.<br>Technologies:
-                                                                                            EFK stacks, Kafka,
-                                                                                            Kubernetes,
-                                                                                            Powershell Script,
-                                                                                            ADO</span><span
-                                                                                            class="visually-hidden">Created
-                                                                                            pipelines, monitored Smarter
-                                                                                            Airport development systems.
-                                                                                            Technologies: EFK stacks,
-                                                                                            Kafka,
-                                                                                            Kubernetes, Powershell
-                                                                                            Script,
-                                                                                            ADO</span>
-
-
-                                                                                    </div>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </li>
-                                                                </ul>
-
-                                                            </div>
-
-                                                        </li>
-                                                        <li class=" ">
-                                                            <div class="pvs-list__outer-container">
-
-                                                                <ul class="pvs-list
-        
-        ">
-                                                                    <li class="pvs-list__item--with-top-padding ">
-                                                                        <div class="d-flex ">
-                                                                            <div class="d-flex w-100">
-                                                                                <div
-                                                                                    class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
-                                                                                    <div class="inline-show-more-text inline-show-more-text--is-collapsed w-100" tabindex="-1">
-
-                                                                                        <span
-                                                                                            aria-hidden="true"><strong>Skills:</strong><span
-                                                                                                class="white-space-pre">
-                                                                                            </span>Git · Adobe Analytics
-                                                                                            ·
-                                                                                            Adobe Experience Manager
-                                                                                            (AEM)</span><span
-                                                                                            class="visually-hidden"><strong>Skills:</strong><span
-                                                                                                class="white-space-pre">
-                                                                                            </span>Git · Adobe Analytics
-                                                                                            ·
-                                                                                            Adobe Experience Manager
-                                                                                            (AEM)</span>
-
-
-                                                                                    </div>
-                                                                                </div>
-
-
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </li>
-                                                                </ul>
-
-                                                            </div>
-
-                                                        </li>
-                                                    </ul>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </li>
-                <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
-
-                    <div class="pvs-entity
-    pvs-entity--padded pvs-list__item--no-padding-when-nested
-    
-    ">
-                        <div>
-                            <a data-field="experience_company_logo" class="optional-action-target-wrapper 
-        d-flex" target="_self" href="https://www.linkedin.com/company/13264159/">
-                                <div class="pvs-entity__image ">
-                                    <div class="d-flex">
-                                        <img width="48"
-                                            src="https://media.licdn.com/dms/image/C4D0BAQFeZt9eVS1Fog/company-logo_100_100/0/1519902873057?e=1680739200&amp;v=beta&amp;t=HokZVaVAD48RK-TjOd-82fC6S77M9W0i3b35Ah6eE1E"
-                                            loading="lazy" height="48" alt="TEKY ACADEMY logo" id="ember176"
-                                            class="EntityPhoto-square-3  lazy-image ember-view">
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-
-                        <div class="d-flex flex-column w-100 align-self-center">
-                            <div class="d-flex flex-row justify-content-between">
-                                <div class="d-flex flex-column w-100">
-
-                                    <div class="d-flex align-items-center">
-                                        <span class="mr-1 font-weight-bold">
-                                            <span aria-hidden="true">STEAM Teacher</span><span
-                                                class="visually-hidden">STEAM Teacher</span>
-                                        </span>
-
-                                    </div>
-                                    <span class="h6 font-weight-normal">
-                                        <span aria-hidden="true">TEKY ACADEMY · Part-time</span><span
-                                            class="visually-hidden">TEKY ACADEMY · Part-time</span>
-                                    </span>
-                                    <span class="h6 font-weight-normal t-black--light">
-                                        <span aria-hidden="true">Jun 2018 - Nov 2020 · 2 yrs 6 mos</span><span
-                                            class="visually-hidden">Jun 2018 - Nov 2020 · 2 yrs 6 mos</span>
-                                    </span>
-                                    <span class="h6 font-weight-normal t-black--light">
-                                        <span aria-hidden="true">Vietnam</span><span
-                                            class="visually-hidden">Vietnam</span>
-                                    </span>
-
-                                </div>
-
-
-
-                                <div class="pvs-entity__action-container">
-
-                                </div>
-                            </div>
-
-                            <div class="pvs-list__outer-container">
-
-                                <ul class="pvs-list
-        
-        ">
-                                    <li class=" ">
-                                        <div class="pvs-list__outer-container">
-
-                                            <ul class="pvs-list
-        
-        ">
-                                                <li class="pvs-list__item--with-top-padding ">
-                                                    <div class="d-flex ">
-                                                        <div class="
-      d-flex w-100">
-
-
-                                                            <div
-                                                                class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
-                                                                <div class="inline-show-more-text
-    inline-show-more-text--is-collapsed
-    
-    
-    
-     w-100" tabindex="-1">
-
-                                                                    <span aria-hidden="true">A successful education
-                                                                        startup company for teaching youngsters about
-                                                                        STEAM.
-                                                                        One of the most popular STEAM academies in
-                                                                        Vietnam</span><span class="visually-hidden">A
-                                                                        successful
-                                                                        education startup company for teaching
-                                                                        youngsters
-                                                                        about STEAM. One of the most popular STEAM
-                                                                        academies
-                                                                        in Vietnam</span>
-
-
-                                                                </div>
-                                                            </div>
-
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </li>
-                                            </ul>
-
-                                        </div>
-
-                                    </li>
-                                    <li class=" ">
-                                        <div class="pvs-list__outer-container">
-
-                                            <ul class="pvs-list
-        
-        ">
-                                                <li class="pvs-list__item--with-top-padding ">
-                                                    <div class="d-flex ">
-                                                        <div class="
-      d-flex w-100">
-
-
-                                                            <div
-                                                                class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
-                                                                <div class="inline-show-more-text
-    inline-show-more-text--is-collapsed
-    
-    
-    
-     w-100" tabindex="-1">
-
-                                                                    <span
-                                                                        aria-hidden="true"><strong>Skills:</strong><span
-                                                                            class="white-space-pre">
-                                                                        </span>STEM</span><span
-                                                                        class="visually-hidden"><strong>Skills:</strong><span
-                                                                            class="white-space-pre">
-                                                                        </span>STEM</span>
-
-
-                                                                </div>
-                                                            </div>
-
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </li>
-                                            </ul>
-
-                                        </div>
-
-                                    </li>
-                                    <li class=" ">
-                                        <!-- <div class="pvs-list__outer-container">
-
-                                            <ul class="pvs-list
-        
-        ">
-                                                <li class="pvs-list__item--with-top-padding ">
-                                                    <a class="optional-action-target-wrapper" target="_self"
-                                                        href="https://www.linkedin.com/in/hoang-an-pham/overlay/1635511533813/single-media-viewer?type=IMAGE&amp;profileId=ACoAACHzro0BeuTtQlRif_zQ8tzZC4QiF-aMy5k">
-                                                        <div class="d-flex flex-row">
-                                                            <div>
-                                                                <div class="pvs-thumbnail__wrapper">
-
-                                                                    <figure class="pvs-thumbnail">
-                                                                        <img src="https://media.licdn.com/dms/image/C562DAQGN40eSbD1Xhw/profile-treasury-image-shrink_160_160/0/1672102148409?e=1673208000&amp;v=beta&amp;t=gbSQWyDVz781CDRqXrhOfNZcFgVN8mo_3qaKgnNd2OA"
-                                                                            loading="lazy" alt=""
-                                                                            id="thumbnail-image-ember177"
-                                                                            class="pvs-thumbnail__image lazy-image ember-view">
-
-
-                                                                    </figure>
-
-                                                                </div>
-
-                                                            </div>
-
-                                                            <div class="flex-column ml1 align-self-center">
-                                                                <div class="inline-show-more-text
-    inline-show-more-text--is-collapsed
-    inline-show-more-text--is-collapsed-with-line-clamp
-    
-    
-     h6 font-weight-bold break-words" style="line-height:2rem;max-height:4rem;-webkit-line-clamp:2;" tabindex="-1">
-
-                                                                    <span aria-hidden="true">Class</span><span
-                                                                        class="visually-hidden">Class</span>
-
-
-                                                                </div>
-
-
-                                                            </div>
-                                                        </div>
-                                                    </a>
-
-
-                                                </li>
-                                            </ul>
-
-                                        </div> -->
-
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </li>
-                <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
-
-                    <div class="pvs-entity
-    pvs-entity--padded pvs-list__item--no-padding-when-nested
-    
-    ">
-                        <div>
-                            <a data-field="experience_company_logo" class="optional-action-target-wrapper 
-        d-flex" target="_self" href="https://www.linkedin.com/company/208401/">
-                                <div class="pvs-entity__image ">
-                                    <div class="d-flex
-    
-    ">
-                                        <img width="48"
-                                            src="https://media.licdn.com/dms/image/C510BAQFdNUkdQtNukA/company-logo_100_100/0/1550638555833?e=1680739200&amp;v=beta&amp;t=LH9qBPCH3pGLcAO0jxM-RGM4WZCn0cBjAW1m2-aJKTk"
-                                            loading="lazy" height="48" alt="FPT Software logo" id="ember179"
-                                            class="EntityPhoto-square-3  lazy-image ember-view">
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-
-                        <div class="d-flex flex-column w-100 align-self-center">
-                            <div class="d-flex flex-row justify-content-between">
-                                <div class="
-          d-flex flex-column w-100">
-
-                                    <div class="d-flex align-items-center">
-                                        <span class="mr-1 font-weight-bold">
-                                            <span aria-hidden="true">.NET Software Developer</span><span
-                                                class="visually-hidden">.NET Software Developer</span>
-                                        </span>
-
-                                    </div>
-                                    <span class="h6 font-weight-normal">
-                                        <span aria-hidden="true">FPT Software · Internship</span><span
-                                            class="visually-hidden">FPT Software · Internship</span>
-                                    </span>
-                                    <span class="h6 font-weight-normal t-black--light">
-                                        <span aria-hidden="true">May 2019 - Oct 2019 · 6 mos</span><span
-                                            class="visually-hidden">May 2019 - Oct 2019 · 6 mos</span>
-                                    </span>
-                                    <span class="h6 font-weight-normal t-black--light">
-                                        <span aria-hidden="true">Vietnam</span><span
-                                            class="visually-hidden">Vietnam</span>
-                                    </span>
-
-                                </div>
-
-
-
-                                <div class="pvs-entity__action-container">
-
-                                </div>
-                            </div>
-
-                            <div class="pvs-list__outer-container">
-
-                                <ul class="pvs-list
-        
-        ">
-                                    <li class=" ">
-                                        <div class="pvs-list__outer-container">
-
-                                            <ul class="pvs-list
-        
-        ">
-                                                <li class="pvs-list__item--with-top-padding ">
-                                                    <div class="d-flex ">
-                                                        <div class="
-      d-flex w-100">
-
-
-                                                            <div
-                                                                class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
-                                                                <div class="inline-show-more-text
-    inline-show-more-text--is-collapsed
-    
-    
-    
-     w-100" tabindex="-1">
-
-                                                                    <span aria-hidden="true">The leading provider of
-                                                                        software outsourcing services in Vietnam. FPT
-                                                                        Software is part of FPT Corporation (FPT – HoSE)
-                                                                        –
-                                                                        the global leading technology, outsourcing and
-                                                                        IT
-                                                                        services group headquartered in Vietnam with
-                                                                        nearly
-                                                                        US$2 billion in revenue and more than 13,000
-                                                                        employees.</span><span
-                                                                        class="visually-hidden">The leading provider
-                                                                        of software outsourcing services in Vietnam. FPT
-                                                                        Software is part of FPT Corporation (FPT – HoSE)
-                                                                        –
-                                                                        the global leading technology, outsourcing and
-                                                                        IT
-                                                                        services group headquartered in Vietnam with
-                                                                        nearly
-                                                                        US$2 billion in revenue and more than 13,000
-                                                                        employees.</span>
-
-
-
-
-                                                                </div>
-                                                            </div>
-
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </li>
-                                            </ul>
-
-                                        </div>
-
-                                    </li>
-                                    <li class=" ">
-                                        <div class="pvs-list__outer-container">
-
-                                            <ul class="pvs-list
-        
-        ">
-                                                <li class="pvs-list__item--with-top-padding ">
-                                                    <div class="d-flex ">
-                                                        <div class="
-      d-flex w-100">
-
-
-                                                            <div
-                                                                class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
-                                                                <div class="inline-show-more-text
-    inline-show-more-text--is-collapsed
-    
-    
-    
-     w-100" tabindex="-1">
-
-                                                                    <span
-                                                                        aria-hidden="true"><strong>Skills:</strong><span
-                                                                            class="white-space-pre"> </span>.NET
-                                                                        Framework ·
-                                                                        Git</span><span
-                                                                        class="visually-hidden"><strong>Skills:</strong><span
-                                                                            class="white-space-pre"> </span>.NET
-                                                                        Framework ·
-                                                                        Git</span>
-
-
-                                                                </div>
-                                                            </div>
-
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </li>
-                                            </ul>
-
-                                        </div>
-
-                                    </li>
-                                    
+                                    </li> -->
                                 </ul>
 
                             </div>

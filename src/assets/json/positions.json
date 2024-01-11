@@ -1,0 +1,156 @@
+[
+    {
+        "companyPicture":"https://media.licdn.com/dms/image/D560BAQEtpvfTmckggg/company-logo_100_100/0/1695093434986/pacific_solar_car_project_logo?e=1712793600&v=beta&t=bEcsXvhWGWGyhPBgdyja1XO0sw51cDlfdsxLACzNEZE",
+        "companyPictureLink":"https://www.linkedin.com/company/97174465/",
+        "companyName":"Pacific Solar Car Project",
+        "companyTime":"Jun 2022 - Present",
+        "roles":[
+            {
+                "roleName":"Telematics Team Lead",
+                "roleDescription":[
+                    "Project manager in Solar Car Club of University of The Pacific",
+                    "Competing Formular Sun American and International contest",
+                    "Building car Telematics Control Unit, Azure Cognitive Service, and Android HMI device",
+                    "Managing and instructing a team with around 20 members"
+                ],
+                "roleSkill":[
+                    "Embedded System Development",
+                    "AWS IoT Core",
+                    ".NET MAUI"
+                ],
+                "roleLocation":"Stockton, US"                
+            }
+        ]
+    },
+    {
+        "companyPicture":"https://media.licdn.com/dms/image/C560BAQFPsmm4x1o9nw/company-logo_100_100/0/1660254133836/university_of_the_pacific_logo?e=1712793600&v=beta&t=PcjNU9KoprTD8eT6T22LDXfSRXb62zsZZ5rvf2UWHA0",
+        "companyPictureLink":"https://www.linkedin.com/company/8636/",
+        "companyName":"University of The Pacific: SOECS",
+        "companyTime":"May 2023 - Sep 2023 . 5 mos",
+        "roles":[
+            {
+                "roleName":"Summer AI & Robotics Researcher",
+                "roleDescription":[
+                    "Created light scale and effective vision model for edge devices for pedestrian detection of automotive robots",
+                    "Used RPI 4 with Coral TPU to boost MobileNet v1 throughput FPS by 5 times and reduce VGG16 latency by 65%."
+                ],
+                "roleSkill":[
+                    "Raspberry 4 Development",
+                    "Object Detection Model",
+                    "Image Classification Model",
+                    "Coral AI"
+                ],
+                "roleLocation":"Stockton, US"                
+            },
+            {
+                "roleName":"Telematics Researcher",
+                "roleDescription":[
+                    "Designed the innovative telematics system for UOP Solar Car by using Orion BMS, Fardriver Motor Controller, and Elmar MPPT. Improving car performance by analyzing car data and monitoring by AWS IoT Core and .NET MAUI."
+                ],
+                "roleSkill":[
+                    "Elmar MPPT",
+                    "Orion BMS",
+                    "CAN Bus",
+                    ".NET MAUI",
+                    "AWS IoT Core"
+                ],
+                "roleLocation":"Stockton, US"                
+            }
+        ]
+    },
+    {
+        "companyPicture":"https://media.licdn.com/dms/image/D4E0BAQFL5VNPF0t2mg/company-logo_100_100/0/1694414405001/netcompany_a_s_logo?e=1712793600&v=beta&t=pjFt2CBAGGh6oMUW-hKfLcJTCiqKRtXfrC0Zt8Grx-8",
+        "companyPictureLink":"https://www.linkedin.com/company/215128/",
+        "companyName":"Netcompany",
+        "companyTime":"Nov 2020 - Jan 2022 . 14 mos",
+        "roles":[
+            {
+                "roleName":"DevOps Engineer",
+                "roleDescription":[
+                    "Resolved 100+ Jira tickets weekly and managed the global Novonordisk CMS using AEM, Jenkins, and Linux Redhat."
+                ],
+                "roleSkill":[
+                    "Red Hat Linux",
+                    "CI/CD",
+                    "Jira",
+                    "Adobe Experience Manager (AEM)"
+                ],
+                "roleLocation":"Ho CHi Minh city, Vietnam"                
+            },
+            {
+                "roleName":"Software Engineer",
+                "roleDescription":[
+                    "Designed the logical and physical mode of User Profiles, Stand Resource Management, and Flight Legs of the Smarter Airport Project by Confluence.",
+                    "Scheduling meetings with CPH clients to get approval on the AODB schema.",
+                    "Developed an intuitive web UI for the airport system using .NET and Angular and analyzed code by ESLint."
+                ],
+                "roleSkill":[
+                    "Agile Methodologies",
+                    ".NET Core",
+                    "Confluence ",
+                    "Angular ",
+                    "ESLint ",
+                    "SQL"
+                ],
+                "roleLocation":"Ho CHi Minh city, Vietnam"                
+            },
+            {
+                "roleName":"DevOps Engineer",
+                "roleDescription":[
+                    "Configured developer environment using IaC and improved consistency using Azure DevOps and PowerShell."
+                ],
+                "roleSkill":[
+                    "Powershell Script",
+                    "Microsoft Azure",
+                    "Azure DevOPs",
+                    "Kubernetes  ",
+                    "Git"
+                ],
+                "roleLocation":"Ho CHi Minh city, Vietnam"                
+            }
+        ]
+    },
+    {
+        "companyPicture":"https://media.licdn.com/dms/image/C4D0BAQFeZt9eVS1Fog/company-logo_100_100/0/1631327205828?e=1712793600&v=beta&t=CZrqPvc0FAwhDrhoNWfaMqgUB-2QRv8zQc2VsoYohT0",
+        "companyPictureLink":"https://www.linkedin.com/company/13264159/",
+        "companyName":"TEKY Academy",
+        "companyTime":"May 2018 - Oct 2020 · 2 yrs 6 mos",
+        "roles":[
+            {
+                "roleName":"Part-time Instructor",
+                "roleDescription":[
+                    "Taught small-scale classes to around 10 students from 6 to 15 years old Python, MS Makecode, Tynker and Scratch",
+                    "Trained kids for international and national Minecraft Hackathon competitions with 1 major win in Singapore"
+                ],
+                "roleSkill":[
+                    "Teaching",
+                    "Python",
+                    "MS MakeCode",
+                    "Scratch"
+                ],
+                "roleLocation":"Ho CHi Minh city, Vietnam"                
+            }
+        ]
+    },
+    {
+        "companyPicture":"https://media.licdn.com/dms/image/C510BAQFdNUkdQtNukA/company-logo_100_100/0/1630582291357/fpt_software_logo?e=1712793600&v=beta&t=OA9yg3gL6BIqxncsrMmBTMP4xaBgg3tnaXo755R7oNU",
+        "companyPictureLink":"https://www.linkedin.com/company/208401/",
+        "companyName":"FPT Software",
+        "companyTime":"May 2019 - Oct 2019 · 6 mos",
+        "roles":[
+            {
+                "roleName":".NET Developer Intern",
+                "roleDescription":[
+                    "Participated in the Enterprise Business Service team which creates a website for large-scale enterprise Honda.",
+                    "Using ASP.NET BoilerPlate (.NET Core with Angular) and MS SQL Server and LINQ."
+                ],
+                "roleSkill":[
+                    "ASP.NET BoilerPlate",
+                    "Entity Framework",
+                    "AngularJS"
+                ],
+                "roleLocation":"Ho CHi Minh city, Vietnam"                
+            }
+        ]
+    }
+]
