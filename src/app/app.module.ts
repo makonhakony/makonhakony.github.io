@@ -8,7 +8,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from './core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ImageLibraryComponent } from './portfolio/image-library/image-library.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +23,6 @@ import { ImageLibraryComponent } from './portfolio/image-library/image-library.c
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent, ImageLibraryComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

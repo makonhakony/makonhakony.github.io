@@ -3,10 +3,11 @@ export interface Position {
     companyPictureLink: string;
     companyName: string;
     companyTime: string;
-    companyLocation: string;
-    position: {
-        positionName: string,
-        positionDescription: string[];
-        positionSkill: string[];
+    roles: {
+        roleName: string,
+        roleTime?: string,
+        roleDescription: string[];
+        roleSkill: string[];
+        roleLocation: string;
     }
 }

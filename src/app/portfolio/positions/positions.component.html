@@ -1,10 +1,10 @@
-<div class="d-flex justify-content-center vw-90 mx-auto" *ngIf="positions$ | async as position">
+<div class="d-flex justify-content-center vw-90 mx-auto" *ngIf="positions$ | async as positions">
     <div *ngFor="let options of respOptions" [ngClass]="options.viewClasses"
         class="flex-column align-items-center text-center w-100">
         <h1 [ngClass]="options.headingClass" class="mb-5"> <span class="font-weight-bold">I Used To Be</span></h1>
         <div class="w-70 justify-content-center body-margin">
             <ul class="pvs-list ph5 d-flex flex-row flex-wrap">
-                <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
+                <!-- <li class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column">
                     <div class="pvs-entity pvs-entity--padded pvs-list__item--no-padding-when-nested">
                         <div>
                             <a data-field="experience_company_logo" class="optional-action-target-wrapper d-flex"
@@ -122,22 +122,22 @@
                         </div>
                     </div>
 
-                </li>
-                <!-- <li 
+                </li> -->
+                <li 
                 class="artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column"
-                *ngfor="let position in positions"
+                *ngFor="let position of positions"
                 >
                     <div class="pvs-entity pvs-entity--padded pvs-list__item--no-padding-when-nested">
                         <div>
                             <a data-field="experience_company_logo" 
                             class="optional-action-target-wrapper d-flex" 
                             target="_self" 
-                            href="https://www.linkedin.com/company/8636/"
+                            [href]="position.compnayPictureLink"
                             >
                                 <div class="pvs-entity__image ">
                                     <div class="d-flex">
                                         <img width="48"
-                                            src="https://media.licdn.com/dms/image/C560BAQFPsmm4x1o9nw/company-logo_100_100/0/1660254133836/university_of_the_pacific_logo?e=1712188800&v=beta&t=fcYTI9j0oSHTCsUYN0ztajq4oe978mJNxBBI_0JQRcM"
+                                            [src]="position.companyPicture"
                                             loading="lazy" height="48" alt="UOP logo" id="ember175"
                                             class="EntityPhoto-square-3  lazy-image ember-view">
                                     </div>
@@ -152,33 +152,28 @@
                                 data-field="experience_company_logo" 
                                 class="optional-action-target-wrapper d-flex flex-column w-100" 
                                 target="_self" 
-                                href="https://www.linkedin.com/company/215128/">
+                                [href]="position.compnayPictureLink">
                                     <div class="d-flex align-items-center">
                                         <span class="mr-1 hoverable-link-text font-weight-bold">
                                             <span aria-hidden="true">
-                                                University of The Pacifc: SOECS
-                                            </span>
-                                            <span class="visually-hidden">
-                                                University of The Pacifc: SOECS
+                                                {{ position.companyName }}
                                             </span>
                                         </span>
 
                                     </div>
                                     <span class="h6 font-weight-normal">
                                         <span aria-hidden="true">
-                                            Full-time & Part-time · 5 mos
-                                        </span>
-                                        <span class="visually-hidden">
-                                            Full-time & Part-time · 5 mos
+                                            {{ position.companyTime }}
                                         </span>
                                     </span>
                                 </a>
                             </div>
                             <div class="pvs-list__outer-container">
+                                <!-- Role List -->
                                 <ul class="pvs-list">
-                                    <li class=" ">
+                                    <li *ngFor="let role of position.roles; index as i">
                                         <span class="pvs-entity__path-node"></span>
-                                        <div class="pvs-entity pvs-entity--with-path">
+                                        <div [ngClass]="{'pvs-entity': true, 'pvs-entity--with-path': i != position.roles.length - 1}">
                                             <div class="d-flex flex-column w-100 align-self-center">
                                                 <div class="d-flex flex-row justify-content-between">
                                                     <a 
@@ -188,26 +183,21 @@
                                                         <div class="d-flex align-items-center">
                                                             <span class="mr-1 hoverable-link-text font-weight-bold">
                                                                 <span aria-hidden="true">
-                                                                    Summer AI Robotics
-                                                                </span>
-                                                                <span class="visually-hidden">
-                                                                    Summer AI Robotics
+                                                                    {{ role.roleName }}
                                                                 </span>
                                                             </span>
                                                         </div>
-                                                        <span class="h6 font-weight-normal t-black--light">
+                                                        <span class="h6 font-weight-normal t-black--light" *ngIf="role.companyTime">
                                                             <span aria-hidden="true">
-                                                                Jul 2023 - Sep 2021 · 3 mos
-                                                            </span>
-                                                            <span class="visually-hidden">
-                                                                May 2023 - Jun 2023 · 2 mos
+                                                                {{ role.roleTime }}
                                                             </span>
                                                         </span>
-
+                                                        <span class="h6 font-weight-normal t-black--light">
+                                                            <span aria-hidden="true">
+                                                                {{ role.roleLocation }}
+                                                            </span>
+                                                        </span>
                                                     </a>
-                                                    <div class="pvs-entity__action-container">
-
-                                                    </div>
                                                 </div>
 
                                                 <div class="pvs-list__outer-container">
@@ -221,38 +211,18 @@
                                                                             <div class="d-flex w-100">
                                                                                 <div class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
                                                                                     <div 
-                                                                                    class="inline-show-more-text inline-show-more-text--is-collapsed w-100" 
+                                                                                    class="inline-show-more-text inline-show-more-text--is-collapsed w-100 text-left" 
                                                                                     tabindex="-1">
-                                                                                        <span
-                                                                                            aria-hidden="true">Developed Smarter Airport internal system. Core components: SRM, User
-                                                                                            Profile, and Core UI.
-                                                                                            Designed
-                                                                                            logical and physical design
-                                                                                            of
-                                                                                            the
-                                                                                            system.<br>Technologies:
-                                                                                            Angular, .NET core,
-                                                                                            PostgreSQL.</span><span
-                                                                                            class="visually-hidden">Developed
-                                                                                            Smarter Airport internal
-                                                                                            system.
-                                                                                            Core components: SRM, User
-                                                                                            Profile, and Core UI.
-                                                                                            Designed
-                                                                                            logical and physical design
-                                                                                            of
-                                                                                            the system.
-                                                                                            Technologies: Angular, .NET
-                                                                                            core, PostgreSQL.</span>
-
-
-
+                                                                                        <span aria-hidden="true" >
+                                                                                            <ul style="list-style-type: square; padding-left: 0;">
+                                                                                                <li *ngFor="let text of role.roleDescription">
+                                                                                                    {{ text }}
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </span>
                                                                                     </div>
                                                                                 </div>
-
-
                                                                             </div>
-
                                                                         </div>
 
                                                                     </li>
@@ -264,43 +234,21 @@
                                                         <li class=" ">
                                                             <div class="pvs-list__outer-container">
 
-                                                                <ul class="pvs-list
-        
-        ">
+                                                                <ul class="pvs-list">
                                                                     <li class="pvs-list__item--with-top-padding ">
                                                                         <div class="d-flex ">
-                                                                            <div class="
-      d-flex w-100">
-
-
+                                                                            <div class="d-flex w-100">
                                                                                 <div
                                                                                     class="pv-shared-text-with-see-more w-100 h6 font-weight-normal t-black d-flex align-items-center">
-                                                                                    <div class="inline-show-more-text
-    inline-show-more-text--is-collapsed
-    
-    
-    
-     w-100" tabindex="-1">
-
-                                                                                        <span
-                                                                                            aria-hidden="true"><strong>Skills:</strong><span
-                                                                                                class="white-space-pre">
-                                                                                            </span>Angular · Git ·
-                                                                                            PostgreSQL · Entity
-                                                                                            Framework ·
-                                                                                            .NET Core</span><span
-                                                                                            class="visually-hidden"><strong>Skills:</strong><span
-                                                                                                class="white-space-pre">
-                                                                                            </span>Angular · Git ·
-                                                                                            PostgreSQL · Entity
-                                                                                            Framework ·
-                                                                                            .NET Core</span>
-
-
+                                                                                    <div class="inline-show-more-text inline-show-more-text--is-collapsed w-100" tabindex="-1">
+                                                                                        <span aria-hidden="true">
+                                                                                            <strong>Skills:</strong> 
+                                                                                            <span *ngFor="let skill of role.roleSkill">
+                                                                                                🧠 {{ skill }}
+                                                                                            </span>
+                                                                                        </span>
                                                                                     </div>
                                                                                 </div>
-
-
                                                                             </div>
 
                                                                         </div>
@@ -318,20 +266,9 @@
                                         </div>
 
                                     </li>
-                                    <li class=" ">
+                                    <!-- <li class=" ">
                                         <span class="pvs-entity__path-node"></span>
-                                        <div class="pvs-entity
-    
-    
-    ">
-                                            <div>
-                                                <div class="
-        d-flex" tabindex="-1" aria-hidden="true">
-
-
-                                                </div>
-
-                                            </div>
+                                        <div class="pvs-entity">
 
                                             <div class="d-flex flex-column w-100 align-self-center">
                                                 <div class="d-flex flex-row justify-content-between">
@@ -339,10 +276,9 @@
           d-flex flex-column w-100" target="_self" href="https://www.linkedin.com/company/215128/">
                                                         <div class="d-flex align-items-center">
                                                             <span class="mr-1 hoverable-link-text font-weight-bold">
-                                                                <span aria-hidden="true">DevOps
-                                                                    Consultant</span><span
-                                                                    class="visually-hidden">DevOps
-                                                                    Consultant</span>
+                                                                <span aria-hidden="true">
+                                                                    DevOps Consultant
+                                                                </span>
                                                             </span>
 
                                                         </div>
@@ -470,14 +406,14 @@
                                             </div>
                                         </div>
 
-                                    </li>
+                                    </li> -->
                                 </ul>
 
                             </div>
                         </div>
                     </div>
 
-                </li> -->
+                </li>
             </ul>
         </div>
     </div>

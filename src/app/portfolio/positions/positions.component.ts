@@ -9,11 +9,13 @@ import { PositionService } from 'src/app/core/services/position.service';
 export class PositionsComponent implements OnInit {
 
   constructor(
-    private positionServices: PositionService
+    private positionService: PositionService
     ) 
-    { }
+    { 
+      
+    }
 
-  positions$ = this.positionServices.getPosition();
+  positions$ = this.positionService.getPosition();
 
   respOptions = [
     { viewClasses: 'd-none d-md-flex', headingClass: 'display-3', useSmallerHeadings: false },
@@ -21,6 +23,7 @@ export class PositionsComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+    
   }
 
 }
